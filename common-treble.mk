@@ -131,6 +131,13 @@ ifneq ($(TARGET_USES_PP_HAL),false)
       android.hardware.power-service.xiaomi-libperfmgr
 endif
 
+ifeq ($(PRODUCT_USES_QCOM_HARDWARE),true)
+    ifneq ($(TARGET_USES_PP_HAL),false)
+        PRODUCT_PACKAGES += \
+            android.hardware.power-service.xiaomi-libperfmgr
+    endif
+endif
+
 # QTI Haptics Vibrator
 ## Used on MTK and QCOM for now
 PRODUCT_PACKAGES += \
