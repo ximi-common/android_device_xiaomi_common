@@ -122,6 +122,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libpower.vendor
 
+ifneq (,$(filter $(PRODUCT_USES_QCOM_HARDWARE) $(TARGET_USES_PP_HAL), true))
+        PRODUCT_PACKAGES += \
+            libqti-perfd-client
+endif
+
 # RIL
 PRODUCT_PACKAGES += \
     ims-moto-libs \
