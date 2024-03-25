@@ -128,3 +128,8 @@ PRODUCT_PACKAGES += \
     libjson \
     libprotobuf-cpp-full \
     libsensorndkbridge
+
+# WiFi
+PRODUCT_PACKAGES += \
+    libcld80211 \
+    libwpa_client

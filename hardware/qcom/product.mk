@@ -175,6 +175,9 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.qti
 
 # WLAN
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom/wlan/legacy
+
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/hardware/qcom/bin/cnss-daemon_moto:$(TARGET_COPY_OUT_VENDOR)/bin/cnss-daemon_moto
 
