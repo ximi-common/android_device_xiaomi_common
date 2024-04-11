@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.usb.gadget-service.moto-common"
+#define LOG_TAG "android.hardware.usb.gadget-service.ximi-common"
 
 #include <hidl/HidlTransportSupport.h>
 #include "UsbGadget.h"

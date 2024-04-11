@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Common path
-COMMON_PATH := device/motorola/common
+COMMON_PATH := device/xiaomi/common
 
 # Hardware
 ## Mediatek

@@ -1,4 +1,4 @@
-service vendor.usb-gadget-hal-1-1 /vendor/bin/hw/android.hardware.usb.gadget-service.moto-common
+service vendor.usb-gadget-hal-1-1 /vendor/bin/hw/android.hardware.usb.gadget-service.ximi-common
     class hal
     user system
     group system shell mtp

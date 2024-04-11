@@ -5,10 +5,10 @@
 #
 # This script is based on conversion from BOARD_ROOT_EXTRA_SYMLINKS to LOCAL_POST_INSTALL_CMD from system/core/rootdir/Android.mk.
 
-ifeq ($(MOTOROLA_SYMLINKS),)
+ifeq ($(XIAOMI_SYMLINKS),)
     $(warning "No symlinks set!")
 else
-LOCAL_POST_INSTALL_CMD := $(foreach s,$(MOTOROLA_SYMLINKS), \
+LOCAL_POST_INSTALL_CMD := $(foreach s,$(XIAOMI_SYMLINKS), \
     $(eval p := $(subst :,$(space),$(s))) \
     mkdir -p $(dir $(PRODUCT_OUT)/$(word 2,$(p))); \
     ln -sf $(word 1,$(p)) $(PRODUCT_OUT)/$(word 2,$(p)); \

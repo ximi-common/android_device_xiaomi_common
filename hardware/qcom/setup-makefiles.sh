@@ -19,7 +19,7 @@
 set -e
 
 DEVICE=qcom
-VENDOR=motorola/common/hardware
+VENDOR=xiaomi/common/hardware
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

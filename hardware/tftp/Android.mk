@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-include $(MOTOROLA_CLEAR_VARS)
+include $(XIAOMI_CLEAR_VARS)
 LOCAL_MODULE := tftp_symlinks
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)
 
@@ -28,7 +28,7 @@ ifeq ($(TARGET_USES_ESOC),true)
 endif
 
 # Prepend vendor and prefix directory to all link names:
-MOTOROLA_SYMLINKS := \
+XIAOMI_SYMLINKS := \
     $(foreach tgtsoc,$(target_soc), \
         $(foreach prefix,$(target_prefixes), \
             $(foreach s,$(target_combinations), \
@@ -39,7 +39,7 @@ MOTOROLA_SYMLINKS := \
     )
 
 # Edgecase for readwrite folders that all point to their own persist folder:
-MOTOROLA_SYMLINKS += \
+XIAOMI_SYMLINKS += \
     $(foreach tgtsoc,$(target_soc), \
         $(foreach prefix,$(target_prefixes), \
             /mnt/vendor/persist/rfs/$(tgtsoc)/$(prefix):$(TARGET_COPY_OUT_VENDOR)/rfs/$(tgtsoc)/$(prefix)/readwrite \
@@ -47,7 +47,7 @@ MOTOROLA_SYMLINKS += \
     )
 
 # Edgecase for tombstone folders need to follow a different pattern:
-MOTOROLA_SYMLINKS += \
+XIAOMI_SYMLINKS += \
     $(foreach tgtsoc,$(target_soc), \
         /data/vendor/tombstones/modem:$(TARGET_COPY_OUT_VENDOR)/rfs/$(tgtsoc)/mpss/ramdumps \
         /data/vendor/tombstones/lpass:$(TARGET_COPY_OUT_VENDOR)/rfs/$(tgtsoc)/adsp/ramdumps \
@@ -56,10 +56,10 @@ MOTOROLA_SYMLINKS += \
     )
 
 ifeq ($(TARGET_USES_ESOC),true)
-  MOTOROLA_SYMLINKS += \
+  XIAOMI_SYMLINKS += \
       $(foreach tgtsoc,$(target_soc), \
           /data/vendor/tombstones/rfs/tn:$(TARGET_COPY_OUT_VENDOR)/rfs/$(tgtsoc)/tn/ramdumps \
       )
 endif
 
-include $(MOTOROLA_BUILD_SYMLINKS)
+include $(XIAOMI_BUILD_SYMLINKS)

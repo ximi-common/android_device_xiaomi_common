@@ -166,8 +166,8 @@ PRODUCT_PACKAGES += \
 
 # USB HAL
 PRODUCT_PACKAGES += \
-    android.hardware.usb.gadget-service.moto-common \
-    android.hardware.usb-service.moto-common
+    android.hardware.usb.gadget-service.ximi-common \
+    android.hardware.usb-service.ximi-common
 
 # WiFi
 PRODUCT_PACKAGES += \

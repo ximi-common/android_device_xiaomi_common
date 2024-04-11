@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Common path
-COMMON_PATH := device/motorola/common
+COMMON_PATH := device/xiaomi/common
 
 # A/B OTA dexopt update_engine hookup
 AB_OTA_POSTINSTALL_CONFIG ?= \
@@ -35,8 +35,8 @@ PRODUCT_COPY_FILES += \
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := build/make/target/board/mainline_arm64/bluetooth
 
 # Build scripts
-MOTOROLA_CLEAR_VARS := $(COMMON_PATH)/motorola_clear_vars.mk
-MOTOROLA_BUILD_SYMLINKS := $(COMMON_PATH)/motorola_build_symlinks.mk
+XIAOMI_CLEAR_VARS := $(COMMON_PATH)/xiaomi_clear_vars.mk
+XIAOMI_BUILD_SYMLINKS := $(COMMON_PATH)/xiaomi_build_symlinks.mk
 
 # Camera
 TARGET_USES_64BIT_CAMERA ?= true
