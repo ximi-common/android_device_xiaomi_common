@@ -20,16 +20,18 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor
 
 # A/B
-PRODUCT_PACKAGES += \
-    otapreopt_script \
-    update_engine \
-    update_engine_client \
-    update_engine_sideload \
-    update_verifier
+ifeq ($(AB_OTA_UPDATER),true)
+    PRODUCT_PACKAGES += \
+        otapreopt_script \
+        update_engine \
+        update_engine_client \
+        update_engine_sideload \
+        update_verifier
 
-## The following modules are included in debuggable builds only.
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl
+    ## The following modules are included in debuggable builds only.
+    PRODUCT_PACKAGES_DEBUG += \
+        bootctl
+endif
 
 # AIDs / For config.fs
 PRODUCT_PACKAGES += \

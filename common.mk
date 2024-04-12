@@ -15,11 +15,13 @@
 # Common path
 COMMON_PATH := device/xiaomi/common
 
-# A/B OTA dexopt update_engine hookup
-AB_OTA_POSTINSTALL_CONFIG ?= \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    POSTINSTALL_OPTIONAL_system=true
+ifeq ($(AB_OTA_UPDATER),true)
+  # A/B OTA dexopt update_engine hookup
+  AB_OTA_POSTINSTALL_CONFIG ?= \
+      RUN_POSTINSTALL_system=true \
+      POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+      POSTINSTALL_OPTIONAL_system=true
+endif
 
 # Arch
 TARGET_ARCH := arm64
@@ -111,10 +113,12 @@ fstab_contents := $(strip $(shell cat $(fstab_path)))
 ifeq (,$(findstring /vendor $(PARTITION_TYPE),$(fstab_contents)))
   $(error $(PARTITION_TYPE) not defined in fstab!)
 endif
-## Now that we know the partition type, let's add
-## it to AB_OTA_POSTINSTALL_CONFIG
-AB_OTA_POSTINSTALL_CONFIG += \
-    FILESYSTEM_TYPE_system=$(PARTITION_TYPE)
+ifeq ($(AB_OTA_UPDATER),true)
+  ## Now that we know the partition type, let's add
+  ## it to AB_OTA_POSTINSTALL_CONFIG
+  AB_OTA_POSTINSTALL_CONFIG += \
+      FILESYSTEM_TYPE_system=$(PARTITION_TYPE)
+endif
 
 # Media codecs configuration
 PRODUCT_COPY_FILES += \
