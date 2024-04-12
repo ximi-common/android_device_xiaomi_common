@@ -77,7 +77,7 @@ PRODUCT_PACKAGES += \
 
 # Lights HAL
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.moto
+    android.hardware.light-service.xiaomi
 
 # Media
 PRODUCT_PACKAGES += \
@@ -128,7 +128,7 @@ PRODUCT_PACKAGES += \
 
 ifneq ($(TARGET_USES_PP_HAL),false)
   PRODUCT_PACKAGES += \
-      android.hardware.power-service.moto-common-libperfmgr
+      android.hardware.power-service.xiaomi-libperfmgr
 endif
 
 # QTI Haptics Vibrator
