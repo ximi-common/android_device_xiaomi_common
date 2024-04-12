@@ -75,10 +75,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail.vendor
 
-# MotoActions
-PRODUCT_PACKAGES += \
-    MotoActions
-
 # NFC
 ifeq ($(call device-has-characteristic,nfc),true)
   PRODUCT_PACKAGES += \
