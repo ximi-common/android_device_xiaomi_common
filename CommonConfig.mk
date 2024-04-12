@@ -14,6 +14,7 @@
 
 # Common path
 COMMON_PATH := device/xiaomi/common
+BOARD_VENDOR := xiaomi
 
 # Hardware
 ## Mediatek

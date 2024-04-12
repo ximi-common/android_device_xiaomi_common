@@ -161,6 +161,10 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel
 
+## Enable xiaomi soong namespace for common hardware features
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/xiaomi
+
 # APEX
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
