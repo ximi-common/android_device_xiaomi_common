@@ -14,6 +14,7 @@
 
 # Common path
 COMMON_PATH := device/xiaomi/common
+HARDWARE_PATH := hardware/xiaomi
 BOARD_VENDOR := xiaomi
 
 # Hardware
@@ -192,7 +193,9 @@ ifeq ($(TARGET_SUPPORTS_NFC),true)
 endif
 
 ## Framework compatibility matrix: What the device(=vendor) expects of the framework(=system)
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(COMMON_PATH)/vintf/framework_compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+  $(COMMON_PATH)/vintf/framework_compatibility_matrix.xml
+  $(HARDWARE_PATH)/vintf/xiaomi_framework_compatibility_matrix.xml
 DEVICE_MATRIX_FILE += $(COMMON_PATH)/vintf/compatibility_matrix.xml
 
 # Wi-Fi Concurrent STA/AP / Init
