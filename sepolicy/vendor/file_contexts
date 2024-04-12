@@ -31,12 +31,6 @@
 # USB Gadget script
 /vendor/bin/init\.gadgethal\.sh u:object_r:init_gadgethal_exec:s0
 
-# Lights
-/vendor/bin/hw/android\.hardware\.lights-service\.moto u:object_r:hal_light_default_exec:s0
-
-# Power
-/vendor/bin/hw/android\.hardware\.power-service\.moto-common-libperfmgr u:object_r:hal_power_default_exec:s0
-
 # RILD Cutback
 /data/vendor/misc/cutback(/.*)? u:object_r:cutback_data_file:s0
 #/dev/socket/cutback u:object_r:cutback_socket:s0
