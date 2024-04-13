@@ -172,8 +172,8 @@ PRODUCT_SOONG_NAMESPACES += \
 # APEX
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-$(call inherit-product, device/motorola/common/common-init.mk)
-$(call inherit-product, device/motorola/common/common-packages.mk)
-$(call inherit-product, device/motorola/common/common-perm.mk)
-$(call inherit-product, device/motorola/common/common-prop.mk)
-$(call inherit-product, device/motorola/common/common-treble.mk)
+$(call inherit-product, device/xiaomi/common/common-init.mk)
+$(call inherit-product, device/xiaomi/common/common-packages.mk)
+$(call inherit-product, device/xiaomi/common/common-perm.mk)
+$(call inherit-product, device/xiaomi/common/common-prop.mk)
+$(call inherit-product, device/xiaomi/common/common-treble.mk)
