@@ -33,10 +33,12 @@ ifeq ($(AB_OTA_UPDATER),true)
         bootctl
 endif
 
-# AIDs / For config.fs
-PRODUCT_PACKAGES += \
-    fs_config_files \
-    fs_config_dirs
+ifneq ($(TARGET_FS_CONFIG_GEN),)
+    # AIDs / For config.fs
+    PRODUCT_PACKAGES += \
+        fs_config_files \
+        fs_config_dirs
+endif
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -52,10 +54,8 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 # Dynamic
-ifeq ($(TARGET_USES_DYNAMIC_PARTITIONS),true)
   PRODUCT_PACKAGES += \
       fastbootd
-endif
 
 # FIXME: master: compat for libprotobuf
 # See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
